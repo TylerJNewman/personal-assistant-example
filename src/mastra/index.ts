@@ -1,12 +1,12 @@
 import { Mastra } from "@mastra/core/mastra";
 import { createLogger } from "@mastra/core/logger";
 import { TelegramIntegration } from "./integrations/telegram";
-import { personalAssistantAgent } from "./agents";
+import { guruAgent } from "./agents";
 import { dailyWorkflow } from "./workflows";
 
 export const mastra: Mastra = new Mastra({
   agents: {
-    personalAssistantAgent,
+    guruAgent,
   },
   workflows: {
     dailyWorkflow,

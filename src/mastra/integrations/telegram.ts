@@ -1,5 +1,5 @@
 import TelegramBot from "node-telegram-bot-api";
-import { personalAssistantAgent } from "../agents";
+import { guruAgent } from "../agents";
 
 export class TelegramIntegration {
   private bot: TelegramBot;
@@ -97,7 +97,7 @@ export class TelegramIntegration {
       const UPDATE_INTERVAL = 500; // Update every 500ms to avoid rate limits
 
       // Stream response using the agent
-      const stream = await personalAssistantAgent.stream(text, {
+      const stream = await guruAgent.stream(text, {
         threadId: `telegram-${chatId}`, // Use chat ID as thread ID
         resourceId: userId, // Use user ID as resource ID
         context: [
